@@ -1,0 +1,24 @@
+<div (click)="$event.stopPropagation()" class='children-wrapper' *ngIf="!node.children">
+  <a [ngClass]="classes" class="node-children">
+    <img class='node-icon' src='../../assets/file.svg'>
+    <span>{{node.name}}</span>
+  </a>
+</div>
+
+<div class='node-accordeon' *ngIf="node.children">
+
+  <div class="node-parent" [ngClass]="classes" type="button" title="{{node.type}}"
+    (click)="headerClicked();$event.stopPropagation()" [attr.aria-pressed]="isExpanded">
+    <div class='node-info'>
+      <img class='node-icon' src='../../assets/folder.svg'>
+      <span class='node-name'> {{node.name}}</span>
+      <span class='node-count'>{{node.children.length}}</span>
+    </div>
+    <div class="node-parent-children" [ngClass]="classes">
+      <tree-node *ngFor="let node of nodeChildren" [level]="level + 1" [isParentExpanded]="isExpanded" [node]="node"
+        [selectedNodes]="selectedNodes"></tree-node>
+    </div>
+  </div>
+
+
+</div>

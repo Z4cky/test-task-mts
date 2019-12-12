@@ -1,0 +1,105 @@
+$material-icons-font-path: "~material-icons/iconfont/";
+@import "material-icons/iconfont/material-icons.scss";
+@mixin flex-column {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+.collapsed {
+  transition: 0.3s ease all;
+  .node-parent-children,
+  .node-parent {
+    max-height: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    max-width:0!important;
+    opacity: 0;
+  }
+}
+.node-parent-children,
+.node-parent {
+  max-height: 1000px; // for accordeon
+}
+.material-icons {
+  margin: 0 10px 0 5px;
+  max-width: 30px;
+  width: 30px;
+  @include flex-center;
+  position: relative;
+}
+.node-parent {
+  position: relative;
+  display: flex;
+  @include flex-column;
+}
+.node-info {
+  display: flex;
+}
+.expanded {
+  .node-children {
+    height: 30px;
+    @include flex-center;
+  }
+  .node-parent-children {
+    display: block;
+  }
+}
+.node-icon{
+  margin-right:5px;
+}
+.node-accordeon {
+  height: auto;
+  display: flex;
+  @include flex-column;
+}
+.children-wrapper{
+  @include flex-column;
+  margin: 20px 0;
+}
+.node-parent,
+.node-children {
+  border: 1px solid rgba(92, 91, 107, 0.047);
+  padding: 10px;
+  min-height: 15px;
+  // @include flex-center;
+  height: auto;
+  border-radius: 3px;
+  position:relative;
+  top:10px;
+  background-color: rgba(92, 91, 107, 0.047);
+  cursor: pointer;
+}
+.node-children {
+  background-color: rgba(143, 140, 185, 0.271);
+}
+.node-name {
+  display: flex;
+  margin: 0 10px;
+}
+.node-count {
+  margin: 0 5px;
+}
+app-nav-item {
+  height: 40px;
+}
+.level {
+  &-1 {
+    // margin-left: 20px;
+  }
+  &-2 {
+    margin-left: 40px;
+  }
+  &-3 {
+    margin-left: 60px;
+  }
+  &-4 {
+    margin-left: 80px;
+  }
+}
+* {
+  overflow: visible;
+}

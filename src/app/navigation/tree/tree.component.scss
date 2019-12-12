@@ -1,0 +1,26 @@
+$material-icons-font-path: "~material-icons/iconfont/";
+@import "material-icons/iconfont/material-icons.scss";
+
+.tree-wrapper {
+  min-width: 20vw;
+  max-width: 400px;
+  margin: 20px;
+  height: auto;
+  max-height: 100vw;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 3px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app-nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
